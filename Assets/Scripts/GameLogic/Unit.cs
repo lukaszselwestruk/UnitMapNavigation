@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace GameLogic
@@ -5,16 +7,21 @@ namespace GameLogic
     public class Unit : MonoBehaviour
     {
         private Vector3 _targetPosition;
-      
-        private void Update()
-        {
-            MoveTowardsTargetPosition();
+        [SerializeField] private string characterName;
+        [SerializeField] private bool isLeader = false;
 
-            if(Input.GetMouseButtonDown(0))
-                MoveTo(MouseToWorld.GetPosition());
+
+        private void Awake()
+        {
+            _targetPosition = transform.position;
         }
 
-        private void MoveTowardsTargetPosition()
+        private void Update()
+        {
+            Motion();
+        }
+
+        private void Motion()
         {
             const float stoppingDistance = .1f;
             if (Vector3.Distance(transform.position, _targetPosition) > stoppingDistance)
@@ -25,9 +32,19 @@ namespace GameLogic
             }
         }
 
-        private void MoveTo(Vector3 targetPosition)
+        public void MoveTo(Vector3 targetPosition)
         {
             this._targetPosition = targetPosition;
+        }
+
+        public void PromoteToLeader()
+        {
+            isLeader = true;
+        }
+
+        public void DemoteFromLeader()
+        {
+            isLeader = false;
         }
     }
 }
