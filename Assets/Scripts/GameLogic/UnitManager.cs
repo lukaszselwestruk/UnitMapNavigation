@@ -9,6 +9,9 @@ namespace GameLogic
         
         [SerializeField] private GameObject unitsContainer;
         public List<Unit> Units { get; private set; }
+        public Unit John { get; private set; }
+        public Unit George { get; private set; }
+        public Unit David { get; private set; }
         
         private void Awake()
         {
@@ -25,6 +28,7 @@ namespace GameLogic
         private void Start()
         {
             AddUnitsToList();
+            SeparateUnitsToUnit();
         }
 
         private void AddUnitsToList()
@@ -33,6 +37,25 @@ namespace GameLogic
             foreach (var go in unitComponents)
             {
                 Units.Add(go);
+            }
+        }
+
+        private void SeparateUnitsToUnit()
+        {
+            foreach (var unit in Units)
+            {
+                switch (unit.name)
+                {
+                    case "John":
+                        John = unit;
+                        break;
+                    case "George":
+                        George = unit;
+                        break;
+                    case "David":
+                        David = unit;
+                        break;
+                }
             }
         }
     }
