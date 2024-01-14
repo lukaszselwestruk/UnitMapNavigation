@@ -8,6 +8,7 @@ namespace GameLogic
         
         public static UnitSelectSystem Instance { get; private set; }
         public event EventHandler OnSelectedUnitChanged;
+        public event EventHandler OnSelectedUnitChangeLider;
         
         [SerializeField] private Unit selectedUnit;
         [SerializeField] private LayerMask unitLayerMask;
@@ -16,7 +17,7 @@ namespace GameLogic
         {
             if (Instance != null)
             {
-                Debug.Log("There is more than one UnitSelectSystem");
+                Debug.LogError("There is more than one UnitSelectSystem");
                 Destroy(gameObject);
                 return;
             }
@@ -35,12 +36,14 @@ namespace GameLogic
             {
                 if (TryHandleUnitSelection()) return;
                 selectedUnit?.MoveTo(MouseToWorld.GetPosition());
+                ChangeLeader();
+
             }
         }
 
         private bool TryHandleUnitSelection()
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // not expensive in Unity 2022
+            var ray = Camera.main!.ScreenPointToRay(Input.mousePosition); // not expensive in Unity 2022
             if (Physics.Raycast(ray, out var raycastHit, float.MaxValue, unitLayerMask))
             {
                 if (raycastHit.transform.TryGetComponent<Unit>(out var unit))
@@ -57,12 +60,15 @@ namespace GameLogic
             selectedUnit = unit;
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);
         }
-
+        private void ChangeLeader()
+        {
+            OnSelectedUnitChangeLider?.Invoke(this, EventArgs.Empty);
+        }
+       
         public Unit GetSelectedUnit()
         {
             return selectedUnit;
         }
-
     }
     
 }

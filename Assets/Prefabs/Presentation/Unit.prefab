@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3559155433577805871}
   - component: {fileID: 7745483023984864592}
   - component: {fileID: 6785841031828694699}
+  - component: {fileID: 3266836340347028851}
+  - component: {fileID: 8497076531132197285}
   m_Layer: 7
   m_Name: Unit
   m_TagString: Untagged
@@ -54,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.56457776, y: 1.874085, z: 0.49940872}
-  m_Center: {x: -0.023261338, y: 0.96073675, z: -0.05563151}
+  m_Size: {x: 0.7123639, y: 1.874085, z: 0.628007}
+  m_Center: {x: -0.013209671, y: 0.96073675, z: -0.048259825}
 --- !u!114 &7745483023984864592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,8 +70,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746cb007732ece2409e4f4ef7c992de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: John
+  characterName: John
+  moveSpeed: 4
   isLeader: 0
+  isFollower: 0
+  hasReachedTarget: 0
 --- !u!114 &6785841031828694699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +87,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb16025f4d6079429588ac130e45976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 7745483023984864592}
+  unitToPromote: {fileID: 7745483023984864592}
+  leader: {fileID: 7745483023984864592}
+--- !u!114 &3266836340347028851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270483456221675562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe25678f9c489914ab3fec3b2877f5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitWhoFollows: {fileID: 7745483023984864592}
+--- !u!54 &8497076531132197285
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270483456221675562}
+  serializedVersion: 4
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &7250233225087703606
 PrefabInstance:
   m_ObjectHideFlags: 0
