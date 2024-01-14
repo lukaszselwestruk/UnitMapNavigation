@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace GameLogic
 {
@@ -34,6 +35,7 @@ namespace GameLogic
         {
             if (Input.GetMouseButtonDown(0))
             {
+                if (EventSystem.current.IsPointerOverGameObject()) return;
                 if (TryHandleUnitSelection()) return;
                 selectedUnit?.MoveTo(MouseToWorld.GetPosition());
                 ChangeLeader();
@@ -55,7 +57,7 @@ namespace GameLogic
             return false;
         }
 
-        private void SetSelectedUnit(Unit unit)
+        public void SetSelectedUnit(Unit unit)
         {
             selectedUnit = unit;
             OnSelectedUnitChanged?.Invoke(this, EventArgs.Empty);

@@ -5,15 +5,34 @@ namespace GameLogic
     public class Unit : MonoBehaviour
     {
         private Vector3 _targetPosition;
-        [SerializeField] private float moveSpeed = 4f;
+       
         [SerializeField] public bool isFollower = false;
         [SerializeField] public bool hasReachedTarget = false;
         public bool IsLeader { get; private set; } = false;
+        
+        /*[SerializeField] private string characterName;
+        public string CharacterName
+        {
+            get => characterName;
+            private set => characterName = value;
+        }*/
+        public float MoveSpeed { get; private set; } 
+        public float Responsivity { get; private set; } 
+        public float Stamina { get; private set; } 
+        
         private void Awake()
         {
             _targetPosition = transform.position;
+            SetRandomStats(0.5f, 10f);
         }
-        
+
+        private void SetRandomStats(float min, float max)
+        {
+            MoveSpeed = Random.Range(min, max);
+            Responsivity = Random.Range(min, max);
+            Stamina = Random.Range(min, max);
+        }
+
         private void Update()
         {
             Motion();
@@ -25,7 +44,7 @@ namespace GameLogic
             if (Vector3.Distance(transform.position, _targetPosition) > stoppingDistance)
             {
                 var moveDirection = (_targetPosition - transform.position).normalized;
-                transform.position += moveDirection * (moveSpeed * Time.deltaTime);
+                transform.position += moveDirection * (MoveSpeed * Time.deltaTime);
                 hasReachedTarget = false;
             }
             else

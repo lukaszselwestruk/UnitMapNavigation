@@ -540,6 +540,7 @@ MonoBehaviour:
   moveSpeed: 4
   isFollower: 0
   hasReachedTarget: 0
+  characterName: 
 --- !u!4 &1031103514
 Transform:
   m_ObjectHideFlags: 0
@@ -1211,6 +1212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
+        type: 3}
+      propertyPath: characterName
+      value: John
       objectReference: {fileID: 0}
     - target: {fileID: 8497076531132197285, guid: 11a973ba22494c949aa5ba65c72cf51e,
         type: 3}
