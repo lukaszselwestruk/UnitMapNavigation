@@ -369,11 +369,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7167728575691558074, guid: 11a973ba22494c949aa5ba65c72cf51e,
+        type: 3}
+      propertyPath: hasReachedTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
         type: 3}
       propertyPath: name
       value: George
       objectReference: {fileID: 0}
+    - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
+        type: 3}
+      propertyPath: unitData
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d371f2a4ac3e3c46bc3b185ce1dd338,
+        type: 2}
     - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
         type: 3}
       propertyPath: characterName
@@ -648,11 +659,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7167728575691558074, guid: 11a973ba22494c949aa5ba65c72cf51e,
+        type: 3}
+      propertyPath: hasReachedTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
         type: 3}
       propertyPath: name
       value: David
       objectReference: {fileID: 0}
+    - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
+        type: 3}
+      propertyPath: unitData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a9eb3f8871b71847ad96037cff26f44,
+        type: 2}
     - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
         type: 3}
       propertyPath: characterName
@@ -1211,6 +1233,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7167728575691558074, guid: 11a973ba22494c949aa5ba65c72cf51e,
+        type: 3}
+      propertyPath: hasReachedTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
+        type: 3}
+      propertyPath: unitData
+      value: 
+      objectReference: {fileID: 11400000, guid: d9026eb8073a0d64ba29249267bddb21,
+        type: 2}
     - target: {fileID: 7745483023984864592, guid: 11a973ba22494c949aa5ba65c72cf51e,
         type: 3}
       propertyPath: characterName

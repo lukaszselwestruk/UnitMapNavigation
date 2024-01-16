@@ -21,9 +21,9 @@ namespace UI
         {
             var unit = UnitSelectSystem.Instance.GetSelectedUnit();
             textName.text = unit.name;
-            textSpeed.text = unit.MoveSpeed.ToString("F1");
-            textMobility.text = unit.Mobility.ToString("F1");
-            textStamina.text = unit.Stamina.ToString("F1");
+            textSpeed.text = unit.unitData.MoveSpeed.ToString("F1");
+            textMobility.text = unit.unitData.Mobility.ToString("F1");
+            textStamina.text = unit.unitData.Stamina.ToString("F1");
         }
     }
 }
