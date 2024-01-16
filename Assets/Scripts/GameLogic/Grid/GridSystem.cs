@@ -21,7 +21,6 @@ namespace GameLogic.Grid
             {
                 for (var z = 0; z < _height; z++)
                 { 
-                    GridPosition gridPosition = new GridPosition(x, z);
                     _gridObjects[x, z] = new GridObject(this, new GridPosition(x, z));
                
                 }

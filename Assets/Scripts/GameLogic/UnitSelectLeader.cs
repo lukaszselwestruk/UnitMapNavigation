@@ -18,11 +18,11 @@ namespace GameLogic
         {
             if (UnitSelectSystem.Instance.GetSelectedUnit() == unitToPromote)
             {
-                unitToPromote.PromoteToLeader();
+                unitToPromote.unitData.PromoteToLeader();
             }
             else
             {
-                unitToPromote.DemoteFromLeader();
+                unitToPromote.unitData.DemoteFromLeader();
             }
         }
         
@@ -30,7 +30,7 @@ namespace GameLogic
         {
        
             var units = UnitManager.Instance.Units;
-            foreach (var unit in units.Where(unit => unit.IsLeader))
+            foreach (var unit in units.Where(unit => unit.unitData.IsLeader))
             {
                 leader = unit;
                 break;

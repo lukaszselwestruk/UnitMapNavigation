@@ -14,7 +14,7 @@ namespace GameLogic
 
         private void Update()
         {
-            if (!unitFollowingLeader.IsLeader)
+            if (!unitFollowingLeader.unitData.IsLeader)
             {
                 unitFollowingLeader.GetMoveComponent().MoveTo(_unitSelectLeader.leader.GetGridPosition());
             }

@@ -7,7 +7,7 @@ namespace GameLogic
     public class Move : MonoBehaviour
     {
         private Vector3 _targetPosition;
-
+        [SerializeField] public bool _leaderHasMoved = false;
         [SerializeField] private int maxMoveDistance = 4;
         private Unit _unit;
         [SerializeField] public bool hasReachedTarget;
@@ -15,7 +15,8 @@ namespace GameLogic
         {
             _targetPosition = transform.position;
         }
-        void Start()
+
+        private void Start()
         {
             _targetPosition = transform.position;
             _unit = GetComponent<Unit>();
@@ -31,7 +32,7 @@ namespace GameLogic
             if (Vector3.Distance(transform.position, _targetPosition) > stoppingDistance)
             {
                 var moveDirection = (_targetPosition - transform.position).normalized;
-                transform.position += moveDirection * (_unit.MoveSpeed * Time.deltaTime);
+                transform.position += moveDirection * (_unit.unitData.MoveSpeed * Time.deltaTime);
                 hasReachedTarget = false;
             }
             else
@@ -41,29 +42,35 @@ namespace GameLogic
         }
         public void MoveTo(GridPosition gridPosition)
         {
-            if (_unit.isFollower && !hasReachedTarget)
-                this._targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition) - new Vector3(1f, 0, 1f);
-            else
+            if (_unit.unitData.IsLeader)
+            {
                 this._targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition);
+            }
+            else if (_unit.unitData.IsFollower)
+            {
+                this._targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition) - new Vector3(1f, 0, 1f);
+            }
+               
         }
-
+        
         public bool IsValidActionGridPosition(GridPosition gridPosition)
         {
-            List<GridPosition> validGridPositionList = GetValidGridPositionList();
+            var validGridPositionList = GetValidGridPositionList();
             return validGridPositionList.Contains(gridPosition);
         }
-        public List<GridPosition> GetValidGridPositionList()
+
+        private List<GridPosition> GetValidGridPositionList()
         {
-            List<GridPosition> validGridPositionList = new List<GridPosition>();
+            var validGridPositionList = new List<GridPosition>();
 
-            GridPosition unitGridPosition = _unit.GetGridPosition();
+            var unitGridPosition = _unit.GetGridPosition();
 
-            for (int x = -maxMoveDistance; x <= maxMoveDistance; x++)
+            for (var x = -maxMoveDistance; x <= maxMoveDistance; x++)
             {
-                for (int z = -maxMoveDistance; z <= maxMoveDistance; z++)
+                for (var z = -maxMoveDistance; z <= maxMoveDistance; z++)
                 {
-                    GridPosition offsetGridPosition = new GridPosition(x, z);
-                    GridPosition testGridPosition = unitGridPosition + offsetGridPosition;
+                    var offsetGridPosition = new GridPosition(x, z);
+                    var testGridPosition = unitGridPosition + offsetGridPosition;
               
                     if (!LevelGrid.Instance.IsValidGridPosition(testGridPosition))
                     {
