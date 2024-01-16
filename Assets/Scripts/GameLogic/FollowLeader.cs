@@ -16,7 +16,7 @@ namespace GameLogic
         {
             if (!unitFollowingLeader.IsLeader)
             {
-                unitFollowingLeader.MoveTo(_unitSelectLeader.leader.transform.position);
+                unitFollowingLeader.GetMoveComponent().MoveTo(_unitSelectLeader.leader.GetGridPosition());
             }
         }
     }

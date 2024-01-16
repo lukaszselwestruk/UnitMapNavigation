@@ -1,4 +1,5 @@
 using System;
+using GameLogic.Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -37,9 +38,13 @@ namespace GameLogic
             {
                 if (EventSystem.current.IsPointerOverGameObject()) return;
                 if (TryHandleUnitSelection()) return;
-                selectedUnit?.MoveTo(MouseToWorld.GetPosition());
-                ChangeLeader();
-
+                
+                GridPosition mouseGridPosition = LevelGrid.Instance.GetGridPosition(MouseToWorld.GetPosition());
+                if (selectedUnit.GetMoveComponent().IsValidActionGridPosition(mouseGridPosition))
+                {
+                    selectedUnit?.GetMoveComponent().MoveTo(mouseGridPosition);
+                    ChangeLeader();
+                }
             }
         }
 

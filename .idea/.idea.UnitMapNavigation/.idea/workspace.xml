@@ -11,9 +11,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/5b/9eeb1bcd/IEquatable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/FollowLeader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/Grid/GridDebugObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/Grid/GridObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/Grid/GridPosition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/Grid/LevelGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/MouseToWorld.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/Move.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/UnitManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameLogic/UnitSelectLeader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Presentation/UnitSelectedVisual.cs" root0="FORCE_HIGHLIGHTING" />
@@ -123,6 +130,13 @@
       <workItem from="1705235481183" duration="897000" />
       <workItem from="1705237274978" duration="16253000" />
       <workItem from="1705261114332" duration="2415000" />
+      <workItem from="1705272448860" duration="1686000" />
+      <workItem from="1705275021624" duration="1144000" />
+      <workItem from="1705310951744" duration="12139000" />
+      <workItem from="1705357004535" duration="614000" />
+      <workItem from="1705358643484" duration="4289000" />
+      <workItem from="1705396064832" duration="4353000" />
+      <workItem from="1705423160689" duration="8049000" />
     </task>
     <servers />
   </component>
@@ -134,25 +148,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/GameLogic/UnitManager.cs</url>
-          <line>38</line>
-          <properties documentPath="D:\Dev\Unity\UnitMapNavigation\Assets\Scripts\GameLogic\UnitManager.cs" initialLine="34" containingFunctionPresentation="Method 'AddUnitsToList'">
-            <startOffsets>
-              <option value="1099" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1113" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -10,7 +10,7 @@ namespace UI
     {
         [SerializeField] private TextMeshProUGUI textName;
         [SerializeField] private TextMeshProUGUI textSpeed;
-        [SerializeField] private TextMeshProUGUI textResponsivity;
+        [SerializeField] private TextMeshProUGUI textMobility;
         [SerializeField] private TextMeshProUGUI textStamina;
         private void Start()
         {
@@ -22,7 +22,7 @@ namespace UI
             var unit = UnitSelectSystem.Instance.GetSelectedUnit();
             textName.text = unit.name;
             textSpeed.text = unit.MoveSpeed.ToString("F1");
-            textResponsivity.text = unit.Responsivity.ToString("F1");
+            textMobility.text = unit.Mobility.ToString("F1");
             textStamina.text = unit.Stamina.ToString("F1");
         }
     }
